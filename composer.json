@@ -1,5 +1,5 @@
 {
-    "name": "zhanghongbo/swoft-framework",
+    "name": "swoft-rewrite/swoft-framework",
     "description": "分布式开始，重写swoft框架之 -- framework 模块",
     "keywords": ["swoft","framework"],
     "license": "MIT",
