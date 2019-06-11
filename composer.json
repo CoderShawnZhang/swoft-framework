@@ -11,11 +11,18 @@
     ],
     "minimum-stability":"dev",
     "require": {
-        "php": ">7.1.0"
+        "php": ">7.1.0",
+        "swoft-rewrite/swoft-annotation": "dev-master",
+        "swoft-rewrite/swoft-console": "dev-master",
+        "swoft-rewrite/swoft-bean": "dev-master"
     },
     "autoload": {
         "psr-4": {
-            "SwoftRewrite\\Framework\\": "src/"
-        }
+            "SwoftRewrite\\Framework\\": "src/",
+            "App\\":"app"
+        },
+        "files":[
+            "src/Helper/Functions.php"
+        ]
     }
 }
