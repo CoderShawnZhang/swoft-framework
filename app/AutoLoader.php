@@ -19,4 +19,9 @@ class AutoLoader extends SwoftComponent
             __NAMESPACE__ => __DIR__,
         ];
     }
+
+    public function beans()
+    {
+        return [];
+    }
 }

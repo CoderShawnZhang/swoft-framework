@@ -11,5 +11,5 @@ namespace SwoftRewrite\Framework\Contract;
 
 interface DefinitionInterface
 {
-    public function beans(): array;
+    public function beans();
 }

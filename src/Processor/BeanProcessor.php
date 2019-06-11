@@ -35,11 +35,9 @@ class BeanProcessor extends Processor
 
         BeanFactory::init();
 
-       $t = BeanFactory::getBean('DemoT');
-       $b = BeanFactory::getBean('DemoA');
-       $c = BeanFactory::getBean('DemoC');
-//       $F = BeanFactory::getBean('cliApp');
-//       $d = BeanFactory::getBean('DemoD');
+
+       $cliApp = BeanFactory::getBean('cliApp');
+
     }
 
     /**

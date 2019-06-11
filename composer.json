@@ -14,7 +14,8 @@
         "php": ">7.1.0",
         "swoft-rewrite/swoft-annotation": "dev-master",
         "swoft-rewrite/swoft-console": "dev-master",
-        "swoft-rewrite/swoft-bean": "dev-master"
+        "swoft-rewrite/swoft-bean": "dev-master",
+        "swoft-rewrite/swoft-stdlib": "dev-master"
     },
     "autoload": {
         "psr-4": {
