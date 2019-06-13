@@ -13,6 +13,7 @@ use SwoftRewrite\Framework\Processor\AnnotationProcessor;
 use SwoftRewrite\Framework\Processor\ApplicationProcessor;
 use SwoftRewrite\Framework\Processor\BeanProcessor;
 use SwoftRewrite\Framework\Processor\ConsoleProcessor;
+use SwoftRewrite\Framework\Processor\EventProcessor;
 use SwoftRewrite\Stdlib\Helper\ComposerHelper;
 use SwoftRewrite\Stdlib\Helper\Str;
 
@@ -52,7 +53,8 @@ class SwoftApplication
         return [
             new AnnotationProcessor(),
             new BeanProcessor($this),
-            new ConsoleProcessor()
+            new ConsoleProcessor(),
+            new EventProcessor($this),
         ];
     }
 

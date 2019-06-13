@@ -7,5 +7,8 @@
  */
 
 return [
-
+    'cliApp' => [
+        'class' => \App\DemoA::class,
+        'version' => '1.0.0'
+    ]
 ];

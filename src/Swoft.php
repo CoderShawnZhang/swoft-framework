@@ -9,6 +9,7 @@
 namespace SwoftRewrite\Framework;
 
 
+use SwoftRewrite\Bean\BeanFactory;
 use SwoftRewrite\Framework\Concern\PathAliasTrait;
 
 class Swoft
@@ -25,5 +26,10 @@ class Swoft
     public static function app()
     {
         return self::$app;
+    }
+
+    public static function trigger($event,$target = null,...$params)
+    {
+        return BeanFactory::getSingleton('eventManager')->trigger($event,$target,$params);
     }
 }
