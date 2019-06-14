@@ -8,7 +8,7 @@
 
 return [
     'cliApp' => [
-        'class' => \App\DemoA::class,
+        'class' => \SwoftRewrite\Console\Application::class,
         'version' => '1.0.0'
     ]
 ];

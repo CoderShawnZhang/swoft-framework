@@ -9,10 +9,19 @@
 namespace SwoftRewrite\Framework\Processor;
 
 
+use SwoftRewrite\Bean\BeanFactory;
+use SwoftRewrite\Console\CommandRegister;
+use SwoftRewrite\Framework\Swoft;
+
 class ConsoleProcessor
 {
     public function handle()
     {
-        echo self::class;
+//        Swoft::trigger('aabbccd',$this);
+
+        $router = BeanFactory::getBean('cliRouter');
+        CommandRegister::register($router);
+
+        BeanFactory::getBean('cliApp')->run();
     }
 }

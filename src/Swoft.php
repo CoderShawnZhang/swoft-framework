@@ -9,6 +9,8 @@
 namespace SwoftRewrite\Framework;
 
 
+use SwoftRewrite\Bean\Container;
+use SwoftRewrite\Stdlib\Reflections;
 use SwoftRewrite\Bean\BeanFactory;
 use SwoftRewrite\Framework\Concern\PathAliasTrait;
 
@@ -31,5 +33,20 @@ class Swoft
     public static function trigger($event,$target = null,...$params)
     {
         return BeanFactory::getSingleton('eventManager')->trigger($event,$target,$params);
+    }
+
+    public static function getReflection(string $class)
+    {
+        return Reflections::get($class);
+    }
+
+    /**
+     * @param string $name
+     * @return mixed
+     * @throws \Exception
+     */
+    public static function getSingleton(string $name)
+    {
+        return Container::$instance->getSingleton($name);
     }
 }

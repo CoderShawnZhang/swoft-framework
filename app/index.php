@@ -2,9 +2,7 @@
 
 require dirname(__DIR__) . '/vendor/autoload.php';
 
-if($_SERVER['REQUEST_URI'] == '/favicon.ico'){
-    return false;
-}
+
 
 $app = new \App\Application();
 $app->run();
