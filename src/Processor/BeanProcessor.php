@@ -78,7 +78,7 @@ class BeanProcessor extends Processor
     private function getBeanFile($definitions)
     {
         $beanFile = $this->application->getBeanFIle();
-        $beanFile = alias($beanFile);
+        $beanFile = \alias($beanFile);
 
         if(!file_exists($beanFile)){
             throw new \Exception(printf('The Bean config file of %s is not exist!',$beanFile));

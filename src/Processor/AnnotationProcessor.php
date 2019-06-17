@@ -11,7 +11,7 @@ namespace SwoftRewrite\Framework\Processor;
 
 use SwoftRewrite\Annotation\AnnotationRegister;
 
-class AnnotationProcessor
+class AnnotationProcessor extends Processor
 {
     public function handle()
     {
@@ -26,5 +26,6 @@ class AnnotationProcessor
 //  'SwoftRewrite\\Bean\\Annotation\\Mapping\\Bean' => 'SwoftRewrite\\Bean\\Annotation\\Parser\\BeanParser',
 //)
         $t = 1;
+
     }
 }

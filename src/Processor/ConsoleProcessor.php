@@ -13,7 +13,7 @@ use SwoftRewrite\Bean\BeanFactory;
 use SwoftRewrite\Console\CommandRegister;
 use SwoftRewrite\Framework\Swoft;
 
-class ConsoleProcessor
+class ConsoleProcessor extends Processor
 {
     public function handle()
     {

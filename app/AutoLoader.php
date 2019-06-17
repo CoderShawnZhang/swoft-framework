@@ -20,7 +20,7 @@ class AutoLoader extends SwoftComponent
         ];
     }
 
-    public function beans()
+    public function beans(): array
     {
         return [];
     }

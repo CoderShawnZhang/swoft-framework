@@ -51,9 +51,9 @@ class SwoftApplication
     private function processors()
     {
         return [
-            new AnnotationProcessor(),
+            new AnnotationProcessor($this),
             new BeanProcessor($this),
-            new ConsoleProcessor(),
+            new ConsoleProcessor($this),
             new EventProcessor($this),
         ];
     }
