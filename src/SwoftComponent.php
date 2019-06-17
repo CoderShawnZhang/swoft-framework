@@ -27,7 +27,7 @@ abstract class SwoftComponent implements ComponentInterface
 
     public function enable()
     {
-        $this->enable = true;
+        return true;
     }
 
     public function beans(): array

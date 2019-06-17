@@ -1,1 +1,16 @@
 # swoft-framework
+
+
+同步阻塞
+如果用同步阻塞的写法，Worker进程必须要等待所有IO完成才能发送response，然后再处理下一个请求。一个请求要处理1秒，那4个Worker进程1秒只能处理4个请求。
+
+所以同步模式应该增加进程数量，比如设置200个，那么就可以提供200QPS的处理能力。在swoole_http_server中如果使用同步模式编写代码，那么相比php-fpm，它提升性能的地方主要有2点：
+
+swoole_http_server解析http请求效率更高，它是一次性读取所有SOCKET数据到内存，然后再去解析，比php-fpm的逐个read节省了大量系统调用，效率要更高。
+swoole_http_server支持PHP对象和全局变量、资源持久化，所以不需要重复创建销毁某些对象/变量/资源，所以节省了很多CPU消耗。
+异步非阻塞
+swoole_http_server最大的优势是可以使用异步IO，假设一个请求需要花1秒，这1秒中有800ms是等待MySQL服务器返回数据。异步模式可以执行SQL后设置一个回调函数然后立即返回。这时并没有发送response，请求实际上是挂在EventLoop中的。
+
+Server就可以直接处理下一个请求，同样下一个请求也是继续发送SQL然后设置回调。等MySQL服务器返回结果时，才重新把上一次的request拿出来，response内容拼好，然后发送response。
+
+实际上一个request花的时间还是1秒，只不过异步模式下Server可以同时并发处理多个请求。所以4个进程就能应对大量请求。
